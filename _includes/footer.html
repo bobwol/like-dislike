@@ -1,0 +1,52 @@
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col">
+                <ul class="contact-list">
+                    <li>This project is maintained by {% include icon-github.html username=site.github_username %}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://cdn.rawgit.com/uagrace/like-dislike/master/js/like-dislike.js"></script>
+
+<script type="text/javascript">
+    $('#rating').likeDislike({
+        reverseMode: false,
+        disabledClass: 'disable',
+        click: function (value, btnType, event) {
+            var likes = $(this).find('.likes');
+            var dislikes = $(this).find('.dislikes');
+            value === 1 ? likes.text('1') : likes.text('0');
+            value === -1 ? dislikes.text('1') : dislikes.text('0');
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $('#rating2').likeDislike({
+        reverseMode: true,
+        disabledClass: 'disable',
+        click: function (value, btnType, event) {
+            console.log(value);
+            var likes = $(this).find('.likes');
+            var dislikes = $(this).find('.dislikes');
+            value === 1 ? likes.text('1') : likes.text('0');
+            value === -1 ? dislikes.text('1') : dislikes.text('0');
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $('#rating3').likeDislike({
+        readOnly: true,
+        disabledClass: 'disable'
+    });
+</script>
